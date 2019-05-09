@@ -7,6 +7,16 @@
 2 下载SmallZyy.zip
 3 解压SmallZyy.zip
 4 运行SmallZyy.exe
+-------------------
+2019-05-09 上传beta2
+更新
+1 去掉编辑器DOS窗口和运行时DOS窗口
+2 新添加一些类
+3 更新文档
+4 修复一些bug
+###动态桌面壁纸
+![](https://github.com/TKT2016/SmallZyy/blob/master/beta2/lizi_img/dtzmbz_code.jpg)
+![](https://github.com/TKT2016/SmallZyy/blob/master/beta2/lizi_img/dtzmbz_run.jpg)
 
 -------------------
 2019-05-04 上传第1次测试版
@@ -23,4 +33,3 @@ SmallZyy.zip有例子和教程，源码不便开放
 ###循环画圆
 ![](https://github.com/TKT2016/SmallZyy/blob/master/beta1/lizi_img/lz3s.jpg)
 ![](https://github.com/TKT2016/SmallZyy/blob/master/beta1/lizi_img/lz3r.jpg)
-
