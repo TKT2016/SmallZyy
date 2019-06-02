@@ -1,0 +1,14 @@
+word = "Program"
+
+GraphicsWindow.FontBold = "False"
+GraphicsWindow.FontName = "Verdana"
+GraphicsWindow.FontSize = 24
+GraphicsWindow.BrushColor = "DarkGreen"
+GraphicsWindow.DrawText(10, 10, word)
+
+definition = Dictionary.GetDefinition(word)
+GraphicsWindow.FontSize = 12
+GraphicsWindow.BrushColor = "Black"
+GraphicsWindow.DrawText(10, 60, definition)
+
+

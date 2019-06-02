@@ -1,0 +1,2 @@
+pic = Flickr.GetRandomPicture("rainier")
+Desktop.SetWallPaper(pic)

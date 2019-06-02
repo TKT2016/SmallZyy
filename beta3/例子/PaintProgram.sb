@@ -1,0 +1,32 @@
+GraphicsWindow.BackgroundColor = "Black"
+GraphicsWindow.PenColor = "White"
+GraphicsWindow.MouseDown = OnMouseDown
+GraphicsWindow.MouseMove = OnMouseMove
+GraphicsWindow.KeyDown = OnKeyDown
+
+Sub OnKeyDown
+  If (GraphicsWindow.LastKey = "D1") Then
+    GraphicsWindow.PenColor = "Red"
+  endif
+  If (GraphicsWindow.LastKey = "D2") Then
+    GraphicsWindow.PenColor = "Blue"
+  endif
+  If (GraphicsWindow.LastKey = "D3") Then
+    GraphicsWindow.PenColor = "LightGreen"
+  endif
+EndSub
+
+Sub OnMouseDown
+  prevX = GraphicsWindow.MouseX
+  prevY = GraphicsWindow.MouseY
+EndSub
+
+Sub OnMouseMove
+  x = GraphicsWindow.MouseX
+  y = GraphicsWindow.MouseY
+  If (Mouse.IsLeftButtonDown) then
+    GraphicsWindow.DrawLine(prevX, prevY, x, y)
+  endif
+  prevX = x
+  prevY = y
+EndSub

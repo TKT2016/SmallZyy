@@ -1,0 +1,57 @@
+paddle = Shapes.AddRectangle(120, 12)
+ball = Shapes.AddEllipse(16, 16)
+
+GraphicsWindow.FontSize = 14
+GraphicsWindow.MouseMove = OnMouseMove
+
+score = 0
+PrintScore()
+Sound.PlayBellRingAndWait()
+
+x = 0
+y = 0
+deltaX = 1
+deltaY = 2
+
+RunLoop:
+  x = x + deltaX
+  y = y + deltaY
+  
+  gw = GraphicsWindow.Width
+  gh = GraphicsWindow.Height
+  If (x >= gw - 16 Or x <= 0) Then
+    deltaX = -deltaX
+  EndIf
+  If (y <= 0) Then
+    deltaY = -deltaY
+  EndIf
+ 
+  padX = Shapes.GetLeft(paddle)
+  If (y = gh - 28 And x >= padX And x <= padX + 120) Then
+    Sound.PlayClick()
+    score = score + 10
+    PrintScore()
+    deltaY = -deltaY
+  EndIf
+
+  Shapes.Move(ball, x, y)
+  Program.Delay(5)
+  
+  If (y < gh) Then
+    Goto RunLoop
+  EndIf  
+
+GraphicsWindow.ShowMessage("Your score is: " + score, "Paddle")
+
+Sub OnMouseMove
+  paddleX = GraphicsWindow.MouseX
+  Shapes.Move(paddle, paddleX - 60, GraphicsWindow.Height - 12)
+EndSub
+
+Sub PrintScore
+  ' Clear the score first and then draw the real score text
+  GraphicsWindow.BrushColor = "White"
+  GraphicsWindow.FillRectangle(10, 10, 200, 20)
+  GraphicsWindow.BrushColor = "Black"
+  GraphicsWindow.DrawText(10, 10, "Score: " + score)
+EndSub

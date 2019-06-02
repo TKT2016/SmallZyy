@@ -1,0 +1,8 @@
+ball = Shapes.AddRectangle(200, 100)
+GraphicsWindow.MouseDown = OnMouseDown
+
+Sub OnMouseDown
+  x = GraphicsWindow.MouseX
+  y = GraphicsWindow.MouseY
+  Shapes.Animate(ball, x, y, 1000)
+EndSub
